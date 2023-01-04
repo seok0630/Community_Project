@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E3D6CE">
 
     <Button
         android:id="@+id/login_main_back"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:textSize="20dp"
-        android:background="#00000C"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="@drawable/back_button_2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/login_main_write"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/write_white"
+        android:background="@drawable/write"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="5dp"/>
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="#00000C"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -32,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="테스트 메인화면 게시판"
-            android:textColor="#D3D3D3"
+            android:textColor="#574840"
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:textSize="17dp"/>
@@ -41,15 +39,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="자유게시판"
-            android:textColor="#D3D3D3"
-
+            android:textColor="#574840"
+            android:layout_marginBottom="5dp"
             android:layout_gravity="center_horizontal"
             android:textSize="12dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_View"
