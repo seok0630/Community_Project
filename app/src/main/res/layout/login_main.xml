@@ -7,9 +7,10 @@
         android:id="@+id/login_main_back"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
+        android:outlineProvider="none"
         android:text="Back"
         android:textSize="20dp"
-        android:background="#00000C"
+        android:background="#181818"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"/>
 
@@ -24,7 +25,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="#00000C"
+        android:background="#181818"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -42,7 +43,6 @@
             android:layout_height="wrap_content"
             android:text="자유게시판"
             android:textColor="#D3D3D3"
-
             android:layout_gravity="center_horizontal"
             android:textSize="12dp"/>
         <LinearLayout

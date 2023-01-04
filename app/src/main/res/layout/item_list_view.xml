@@ -2,16 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/round_linear"
-    android:padding="5dp"
-    android:layout_marginTop="10dp"
-    android:layout_height="wrap_content">
+    android:layout_marginTop="10dp">
 
     <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
         android:src="@drawable/ic_launcher_foreground"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,13 +25,13 @@
             android:layout_height="wrap_content"
             android:text="홍길동"
             android:textSize="18dp"
-            android:textColor="@color/white"
-            android:layout_marginBottom="15dp"/>
+            android:textColor="#D3D3D3"
+            android:layout_marginBottom="6dp"/>
         <TextView
             android:id="@+id/text_preview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="#D3D3D3"
             android:text="Test 글쓰기 입니다. 안녕하세요, 박석규입니다. 오늘 살펴볼 것은 안드로이드 스튜디오
 의 MAXLINE을 2로 설정했을때에"
             android:maxLines="1"
