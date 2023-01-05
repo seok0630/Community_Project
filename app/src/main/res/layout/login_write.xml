@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#E3D6CE"
+    android:background="#181818"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#456849">
+        android:background="#363636">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,13 +19,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textSize="17dp"
-                android:textColor="@color/white"
+                android:textColor="#909090"
                 android:text="글쓰기"/>
             <TextView
                 android:id="@+id/login_write_uid_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="#909090"
                 android:textSize="12dp"
                 android:text="사용자 UID: a1241qwrdq2"/>
         </LinearLayout>
@@ -44,12 +44,16 @@
         android:id="@+id/login_write_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#B7B7B7"
+        android:backgroundTint="#B7B7B7"
         android:hint="제목"/>
 
     <EditText
         android:id="@+id/login_write_context"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#B7B7B7"
+        android:backgroundTint="#B7B7B7"
         android:lines="6"
         android:hint="내용"
         />

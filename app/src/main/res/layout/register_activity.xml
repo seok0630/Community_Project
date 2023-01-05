@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#181818"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create your account"
+        android:textSize="52dp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="#B7B7B7"
+        android:layout_marginVertical="40dp"
+        android:padding="10dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp">
+
+        <EditText
+            android:id="@+id/reg_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:textColorHint="#909090"
+            android:textColor="#909090"
+            android:background="@drawable/edit_text_style1"
+            android:hint="Email"/>
+
+
+        <EditText
+            android:id="@+id/reg_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_style1"
+            android:textColorHint="#909090"
+            android:hint="Password"/>
+
+        <EditText
+            android:id="@+id/reg_pass1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#909090"
+            android:background="@drawable/edit_text_style1"
+            android:hint="Re-enter Password"
+            android:inputType="textPassword"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/reg_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:elevation="20dp"
+            android:textColor="#B7B7B7"
+            android:background="#456849"/>
+    </LinearLayout>
+
+</LinearLayout>
