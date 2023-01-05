@@ -31,11 +31,12 @@ class WriteActivity : ComponentActivity() {
             val myRef = database.getReference()
 
             val dataInput = DataModel(
+                uid,
                 binding.loginWriteTitle.text.toString(),
                 binding.loginWriteContext.text.toString()
             )
 
-            myRef.child(uid).setValue(dataInput)
+            myRef.child("board").push().setValue(dataInput)
                 .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     var intent = Intent(this, LoginMainActivity::class.java)

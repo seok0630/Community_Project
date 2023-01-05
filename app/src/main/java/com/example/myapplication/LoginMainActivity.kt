@@ -8,6 +8,10 @@ import androidx.activity.compose.setContent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.LoginMainBinding
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class LoginMainActivity : ComponentActivity () {
 
@@ -17,25 +21,30 @@ class LoginMainActivity : ComponentActivity () {
         val binding = LoginMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val database = FirebaseDatabase.getInstance("https://regsitertest-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("board")
         val list = ArrayList<ViewData>()
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
 
         val adapter = ViewAdpater(list)
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = layoutManager
+
+        database.addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (data in snapshot.children) {
+
+                    val modelResult = data.getValue(DataModel::class.java)
+                    list.add(ViewData(modelResult?.uid.toString(), modelResult?.title.toString()))
+                }
+                adapter.notifyDataSetChanged()
+            }
+        })
+
+//        list.add(ViewData(uid.toString(),"박석규"))
 
         binding.loginMainWrite.setOnClickListener {
             var intent = Intent(this, WriteActivity::class.java)

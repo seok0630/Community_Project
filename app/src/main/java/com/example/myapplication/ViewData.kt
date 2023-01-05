@@ -1,3 +1,3 @@
 package com.example.myapplication
 
-data class ViewData (val name : String, val preview_text : String)
+data class ViewData (val uid : String, val title : String)

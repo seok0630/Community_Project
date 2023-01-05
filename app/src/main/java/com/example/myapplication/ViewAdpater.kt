@@ -12,8 +12,8 @@ class ViewAdpater (val itemList: ArrayList<ViewData>) :
     RecyclerView.Adapter<ViewAdpater.ViewHolder>() {
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val name: TextView = view.findViewById(R.id.name)
-        val previewText: TextView = view.findViewById(R.id.text_preview)
+        val uid: TextView = view.findViewById(R.id.lv_uid)
+        val title: TextView = view.findViewById(R.id.lv_title)
     }
 
     override fun onCreateViewHolder (parent: ViewGroup, viewType: Int): ViewHolder{
@@ -23,8 +23,8 @@ class ViewAdpater (val itemList: ArrayList<ViewData>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.name.text = itemList[position].name
-        holder.previewText.text = itemList[position].preview_text
+        holder.uid.text = itemList[position].uid
+        holder.title.text = itemList[position].title
     }
 
     override fun getItemCount(): Int {
