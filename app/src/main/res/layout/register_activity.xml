@@ -10,10 +10,11 @@
         android:layout_height="wrap_content"
         android:text="Create your account"
         android:textSize="52dp"
-        android:gravity="center_horizontal"
         android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"
         android:textColor="#B7B7B7"
-        android:layout_marginVertical="40dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
         android:padding="10dp" />
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,22 +23,39 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#909090"
+            android:textSize="18dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="5dp"/>
         <EditText
             android:id="@+id/reg_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:textColorHint="#909090"
             android:textColor="#909090"
             android:background="@drawable/edit_text_style1"
             android:hint="Email"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="#909090"
+            android:textSize="18dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"/>
 
         <EditText
             android:id="@+id/reg_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
+            android:fontFamily="@font/open_sans"
             android:inputType="textPassword"
             android:background="@drawable/edit_text_style1"
             android:textColorHint="#909090"
@@ -60,7 +78,57 @@
             android:text="Register"
             android:elevation="20dp"
             android:textColor="#B7B7B7"
-            android:background="#456849"/>
+            android:background="@drawable/register_round_button"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textColor="#B7B7B7"
+            android:text="Sign up with"
+            android:textSize="16dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/google"/>
+            <View
+                android:layout_width="2dip"
+                android:layout_height="42dp"
+                android:background="#909090"
+                android:layout_marginLeft="12dp"/>
+            <Button
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/twitter"/>
+            <View
+                android:layout_width="2dip"
+                android:layout_height="42dp"
+                android:background="#909090"
+                android:layout_marginLeft="12dp"/>
+            <Button
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/facebook"/>
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </LinearLayout>

@@ -13,13 +13,12 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : ComponentActivity() {
-    private lateinit var auth: FirebaseAuth
+    private var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
-                auth = Firebase.auth
                 // A surface container using the 'background' color from the theme
                 val Tesbinding = TesBinding.inflate(layoutInflater)
                 setContentView(Tesbinding.root)
@@ -49,16 +48,22 @@ class MainActivity : ComponentActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    if(auth.currentUser?.isEmailVerified!!){
-                        val intent = Intent(this, LoginMainActivity::class.java)
-                        intent.putExtra("uid", auth.currentUser?.uid)
-                        Toast.makeText(this,email+"님 환영합니다", Toast.LENGTH_LONG).show()
-                        startActivity(intent)
+                    if (auth.currentUser != null) {
+                        if (auth.currentUser!!.isEmailVerified) {
+                            val intent = Intent(this, LoginMainActivity::class.java)
+                            intent.putExtra("uid", auth.currentUser?.uid)
+                            Toast.makeText(this, email + "님 환영합니다", Toast.LENGTH_LONG).show()
+                            startActivity(intent)
+                        }
+                        else {
+                            Toast.makeText(this, "이메일 인증을 받지않은 계정입니다.", Toast.LENGTH_SHORT).show()
+                        }
                     }
                     else {
-                        Toast.makeText(this, "이메일 인증을 받지않은 계정입니다.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "로그인에 실패 하였습니다.(UID에러!)", Toast.LENGTH_SHORT).show()
                     }
-                } else {
+                }
+                else{
                     Toast.makeText(this, "로그인에 실패 하였습니다.", Toast.LENGTH_SHORT).show()
                 }
             }
