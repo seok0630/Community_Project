@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E3D6CE">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/login_main_back"
         android:layout_width="60dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:outlineProvider="none"
         android:text="Back"
         android:textSize="20dp"
-        android:textColor="#574840"
-        android:background="#E3D6CE"
-        android:elevation="10dp"
-        android:outlineProvider="none"
+        android:background="#181818"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"/>
 
@@ -22,12 +19,13 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/write"
+        android:background="@drawable/write_white"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="10dp"/>
 
     <LinearLayout
         android:orientation="vertical"
+        android:background="#181818"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -35,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="테스트 메인화면 게시판"
-            android:textColor="#574840"
+            android:textColor="#D3D3D3"
             android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:textSize="17dp"/>
@@ -44,17 +42,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="자유게시판"
-            android:textColor="#574840"
-            android:layout_marginBottom="5dp"
+            android:textColor="#D3D3D3"
             android:layout_gravity="center_horizontal"
             android:textSize="12dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:paddingTop="10dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_View"

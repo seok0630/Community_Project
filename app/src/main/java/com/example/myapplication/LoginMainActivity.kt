@@ -17,25 +17,25 @@ class LoginMainActivity : ComponentActivity () {
         val binding = LoginMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val list = ArrayList<ViewData>()
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
-//
-//        val adapter = ViewAdpater(list)
-//        val layoutManager = LinearLayoutManager(this)
-//        binding.recyclerView.adapter = adapter
-//        binding.recyclerView.layoutManager = layoutManager
+        val list = ArrayList<ViewData>()
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+        list.add(ViewData("박석규", "안녕하세요ㅎㅎ"))
+
+        val adapter = ViewAdpater(list)
+        val layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = layoutManager
 
         binding.loginMainWrite.setOnClickListener {
             var intent = Intent(this, WriteActivity::class.java)
