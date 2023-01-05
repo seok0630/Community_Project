@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="#E3D6CE"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register Test Main"
-        android:textSize="25dp"
-        android:textColor="@color/white"
-        android:padding="10dp"
-        android:background="@android:color/darker_gray"/>
+        android:text="Create your account"
+        android:textSize="52dp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="#574840"
+        android:layout_marginVertical="40dp"
+        android:padding="10dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +50,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
-            android:textColor="@color/white"/>
+            android:elevation="20dp"
+            android:textColor="@color/white"
+            android:background="#456849"/>
     </LinearLayout>
 
 </LinearLayout>
