@@ -33,6 +33,7 @@
         <activity android:name=".LoginMainActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".WriteActivity"/>
+        <activity android:name=".ContentsViewActivity"/>
     </application>
 
 </manifest>

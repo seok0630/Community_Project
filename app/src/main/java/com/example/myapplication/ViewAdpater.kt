@@ -1,19 +1,36 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import org.w3c.dom.Text
 
-class ViewAdpater (val itemList: ArrayList<ViewData>) :
+class ViewAdpater (val view: View, val itemList: ArrayList<ViewData>) :
     RecyclerView.Adapter<ViewAdpater.ViewHolder>() {
+
+    interface ItemClickListener {
+        fun onClick(view: View, position: Int)
+    }
+
+    private lateinit var itemClickListner: ItemClickListener
+
+    //클릭리스너 등록 매소드
+    fun setItemClickListener(itemClickListener: ItemClickListener) {
+        this.itemClickListner = itemClickListener
+    }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val uid: TextView = view.findViewById(R.id.lv_uid)
         val title: TextView = view.findViewById(R.id.lv_title)
+        val rootview: View = view.findViewById(R.id.lv_rootview)
     }
 
     override fun onCreateViewHolder (parent: ViewGroup, viewType: Int): ViewHolder{
@@ -25,6 +42,9 @@ class ViewAdpater (val itemList: ArrayList<ViewData>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.uid.text = itemList[position].uid
         holder.title.text = itemList[position].title
+        holder.itemView.setOnClickListener {
+            itemClickListner.onClick(it, position)
+        }
     }
 
     override fun getItemCount(): Int {
