@@ -45,6 +45,7 @@
         android:id="@+id/login_write_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#B7B7B7"
         android:textColorHint="#B7B7B7"
         android:backgroundTint="#B7B7B7"
         android:hint="제목"/>
@@ -53,6 +54,7 @@
         android:id="@+id/login_write_context"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#B7B7B7"
         android:textColorHint="#B7B7B7"
         android:backgroundTint="#B7B7B7"
         android:lines="6"

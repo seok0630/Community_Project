@@ -8,13 +8,14 @@ import androidx.activity.compose.setContent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.LoginMainBinding
 import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.getValue
 
 class LoginMainActivity : ComponentActivity () {
-
     private var uid: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,30 @@ class LoginMainActivity : ComponentActivity () {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = layoutManager
 
+//        database.addChildEventListener(object : ChildEventListener{
+//            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+//                val modelResult = snapshot.getValue(DataModel::class.java)
+//
+//            }
+//
+//            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onChildRemoved(snapshot: DataSnapshot) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                Toast.makeText(parent, "Error: "+error.toString(), Toast.LENGTH_LONG).show()
+//            }
+//
+//        })
+
         database.addValueEventListener(object : ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
 
@@ -38,15 +63,20 @@ class LoginMainActivity : ComponentActivity () {
                 for (data in snapshot.children) {
 
                     val modelResult = data.getValue(DataModel::class.java)
-                    list.add(ViewData(modelResult?.uid.toString(), modelResult?.title.toString()))
+                    list.add(0,
+                        ViewData(
+                            modelResult?.uid.toString(),
+                            modelResult?.title.toString()
+                        )
+                    )
                 }
                 adapter.notifyDataSetChanged()
             }
         })
 
-//        list.add(ViewData(uid.toString(),"박석규"))
 
-        binding.loginMainWrite.setOnClickListener {
+
+        binding.loginMainWrite.setOnClickListener { //쓰기버튼 클릭리스너
             var intent = Intent(this, WriteActivity::class.java)
             intent.putExtra("uid", uid)
             startActivity(intent)

@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
-                Tesbinding.btnRegister.setOnClickListener {
+                Tesbinding.tesSignupTextview.setOnClickListener {
                     startActivity(Intent(this, RegisterActivity::class.java))
                 }
             }
