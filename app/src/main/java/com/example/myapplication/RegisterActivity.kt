@@ -2,13 +2,10 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.myapplication.databinding.RegisterActivityBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : ComponentActivity () {
     private lateinit var auth: FirebaseAuth
@@ -55,7 +52,7 @@ class RegisterActivity : ComponentActivity () {
         auth?.currentUser?.sendEmailVerification()?.addOnCompleteListener { verifiTask ->
             if(verifiTask.isSuccessful){
                 Toast.makeText(this, "이메일 전송완료. 이메일을 확인해 주세요", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }
             else {
                 Toast.makeText(this, "이메일 전송실패. 회원가입을 다시 진행 해주세요.", Toast.LENGTH_SHORT).show()

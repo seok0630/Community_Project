@@ -57,6 +57,7 @@
         android:textColor="#B7B7B7"
         android:textColorHint="#B7B7B7"
         android:backgroundTint="#B7B7B7"
+        android:gravity="start"
         android:lines="6"
         android:hint="내용"
         />

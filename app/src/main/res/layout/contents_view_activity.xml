@@ -3,28 +3,81 @@
     android:orientation="vertical"
     android:background="#181818"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/contents_view_title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="제목"
-        android:textSize="20sp"/>
+        android:gravity="center_horizontal"
+        android:background="@drawable/back_color_gray"
+        android:paddingVertical="18dp">
+        <TextView
+            android:id="@+id/contents_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제목"
+            android:textColor="#D3D3D3"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@color/white"
-        android:layout_marginVertical="20dp"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/contents_view_context"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="내용"
-        android:textSize="20sp"/>
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/context_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textColor="#D3D3D3"
+                android:textSize="20sp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/context_uid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="uid"
+                    android:textColor="#D3D3D3"
+                    android:maxLength="8"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/context_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="time"
+                    android:textColor="#D3D3D3"
+                    android:maxLength="10"
+                    android:layout_alignParentRight="true"
+                    android:textSize="16sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#363636"
+            android:layout_marginVertical="8dp"/>
+
+        <TextView
+            android:id="@+id/contents_view_context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내용"
+            android:textColor="#D3D3D3"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

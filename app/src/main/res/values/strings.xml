@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Melon Crack</string>
     <string name="copyright">Copyright©2021 SeokSeok All rights reserved.</string>
+    <string name="back">Back</string>
 </resources>

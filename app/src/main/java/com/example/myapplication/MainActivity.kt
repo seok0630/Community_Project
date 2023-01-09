@@ -8,9 +8,6 @@ import androidx.activity.compose.setContent
 import com.example.myapplication.databinding.TesBinding
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : ComponentActivity() {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()

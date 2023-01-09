@@ -1,17 +1,10 @@
 package com.example.myapplication
 
-import android.content.Context
-import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import org.w3c.dom.Text
 
 class ViewAdpater (val view: View, val itemList: ArrayList<ViewData>) :
     RecyclerView.Adapter<ViewAdpater.ViewHolder>() {
