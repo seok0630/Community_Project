@@ -8,6 +8,8 @@ import androidx.activity.compose.setContent
 import com.example.myapplication.databinding.TesBinding
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : ComponentActivity() {
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -19,6 +21,14 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 val Tesbinding = TesBinding.inflate(layoutInflater)
                 setContentView(Tesbinding.root)
+
+                val user = Firebase.auth.currentUser
+
+                if (user != null) {
+                    val intent = Intent(this, LoginMainActivity::class.java)
+                    intent.putExtra("uid", auth.currentUser?.uid)
+                    startActivity(intent)
+                }
 
                 Tesbinding.btnLogin.setOnClickListener {
                     var pre_email: String? = Tesbinding.edId.text.toString()
