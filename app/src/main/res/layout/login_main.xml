@@ -7,14 +7,12 @@
 
     <Button
         android:id="@+id/login_main_back"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:outlineProvider="none"
-        android:text="@string/back"
-        android:textSize="20dp"
-        android:background="#363636"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"/>
+        android:background="@drawable/arrow_back"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"/>
 
     <Button
         android:id="@+id/login_main_write"
@@ -35,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/back_color_gray"
-            android:paddingVertical="8dp">
+            android:paddingVertical="12dp">
 
             <TextView
                 android:layout_width="wrap_content"

@@ -42,7 +42,8 @@ class LoginMainActivity : ComponentActivity () {
             for (dc in QuerySnapshot!!){
                 list.add(
                     ViewData(dc.data.getValue("uid").toString(),
-                        dc.data.getValue("title").toString())
+                        dc.data.getValue("title").toString(),
+                        dc.data.getValue("time").toString())
                 )
             }
             adapter.notifyDataSetChanged()
@@ -54,7 +55,8 @@ class LoginMainActivity : ComponentActivity () {
                 for (dc in QuerySnapshot!!){
                     list.add(
                         ViewData(dc.data.getValue("uid").toString(),
-                            dc.data.getValue("title").toString())
+                            dc.data.getValue("title").toString(),
+                        dc.data.getValue("time").toString())
                     )
                 }
                 adapter.notifyDataSetChanged()
@@ -67,7 +69,7 @@ class LoginMainActivity : ComponentActivity () {
                 var intent = Intent(view.context, ContentsViewActivity::class.java)
                 intent.putExtra("uid", uid)
                 intent.putExtra("pos", position)
-                intent.putExtra("list", list)
+                intent.putExtra("time", list.get(position).time)
                 startActivity(intent)
             }
         })

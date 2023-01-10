@@ -4,6 +4,6 @@
     <style name="Theme.MyApplication" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/purple_700</item>
         <item name="android:textColor">#A3B0C9</item>
-        <item name="android:fontFamily">@font/open_sans</item>
+        <item name="android:fontFamily">@font/line</item>
     </style>
 </resources>

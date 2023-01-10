@@ -28,25 +28,32 @@ class WriteActivity : ComponentActivity() {
         }
 
         binding.loginWriteButton.setOnClickListener {
-
             val time = LocalDateTime.now()
-
+            val database = Firebase.firestore
             val data = hashMapOf(
                 "time" to time.toString(),
                 "uid" to uid,
                 "title" to binding.loginWriteTitle.text.toString(),
-                "context" to binding.loginWriteContext.text.toString()
+                "context" to binding.loginWriteContext.text.toString(),
+                "recom" to 0, //Recommend
+                "not_recom" to 0,
+                "nov" to 0, //Number Of View
+                "id" to ""
             )
-            val database = Firebase.firestore
 
-            database.collection("collect").add(data)
-                .addOnCompleteListener{ it ->
-                    Toast.makeText(this,"파이어 베이스에 저장완료.", Toast.LENGTH_LONG).show()
-                    finish()
-                }
-                .addOnFailureListener{ it ->
-                    Toast.makeText(this,"파이어 베이스에 저장실패.", Toast.LENGTH_LONG).show()
-                }
-        }
-    }
+            if(binding.loginWriteTitle.text != null && binding.loginWriteContext.text != null) {
+                database.collection("collect").add(data)
+                    .addOnCompleteListener{ it ->
+                        Toast.makeText(this,"파이어 베이스에 저장완료.", Toast.LENGTH_LONG).show()
+                        finish()
+                    }
+                    .addOnFailureListener{ it ->
+                        Toast.makeText(this,"파이어 베이스에 저장실패.", Toast.LENGTH_LONG).show()
+                    }
+            } //if-else (if)
+            else {
+                Toast.makeText(this,"글의 제목과 내용을 전부 입력해주세요", Toast.LENGTH_LONG).show()
+            }
+        } //buttonClickListener
+    } //onCreate
 }
