@@ -23,6 +23,9 @@ class ViewAdpater (val view: View, val itemList: ArrayList<ViewData>) :
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val uid: TextView = view.findViewById(R.id.lv_uid)
         val title: TextView = view.findViewById(R.id.lv_title)
+        val time: TextView = view.findViewById(R.id.lv_time)
+        val noc: TextView = view.findViewById(R.id.lv_noc)
+        val recom: TextView = view.findViewById(R.id.lv_recom)
         val rootview: View = view.findViewById(R.id.lv_rootview)
     }
 
@@ -35,6 +38,9 @@ class ViewAdpater (val view: View, val itemList: ArrayList<ViewData>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.uid.text = itemList[position].uid
         holder.title.text = itemList[position].title
+        holder.time.text = itemList[position].time
+        holder.noc.text = itemList[position].noc
+        holder.recom.text = itemList[position].recom
         holder.itemView.setOnClickListener {
             itemClickListner.onClick(it, position)
         }

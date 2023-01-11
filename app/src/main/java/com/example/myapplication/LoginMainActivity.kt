@@ -5,16 +5,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.compose.animation.core.snap
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.LoginMainBinding
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class LoginMainActivity : ComponentActivity () {
     private var uid: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = LoginMainBinding.inflate(layoutInflater)
@@ -43,7 +42,9 @@ class LoginMainActivity : ComponentActivity () {
                 list.add(
                     ViewData(dc.data.getValue("uid").toString(),
                         dc.data.getValue("title").toString(),
-                        dc.data.getValue("time").toString())
+                        dc.data.getValue("time").toString(),
+                        "댓글(${dc.data.getValue("noc").toString()})",
+                        "추천(${dc.data.getValue("recom").toString()})")
                 )
             }
             adapter.notifyDataSetChanged()
@@ -56,7 +57,9 @@ class LoginMainActivity : ComponentActivity () {
                     list.add(
                         ViewData(dc.data.getValue("uid").toString(),
                             dc.data.getValue("title").toString(),
-                        dc.data.getValue("time").toString())
+                        dc.data.getValue("time").toString(),
+                            "댓글(${dc.data.getValue("noc").toString()})",
+                        "추천(${dc.data.getValue("recom").toString()})")
                     )
                 }
                 adapter.notifyDataSetChanged()
