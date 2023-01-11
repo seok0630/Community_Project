@@ -88,14 +88,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="gone">
-            <EditText
+            <TextView
                 android:id="@+id/image_url_edittext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="이미지 Url"
+                android:text="이미지를 사용하려면 오른쪽의 버튼을 눌러주세요."
                 android:textColor="#B7B7B7"
-                android:textColorHint="#B7B7B7"
-                android:backgroundTint="#B7B7B7"
                 android:singleLine="true"
                 android:layout_weight="1"/>
             <Button

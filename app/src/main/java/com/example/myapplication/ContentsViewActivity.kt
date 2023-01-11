@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -151,9 +153,13 @@ class ContentsViewActivity: ComponentActivity() {
                                                         )
                                                 )
                                         }
-                                        database.collection("collect").document(id)
-                                                .update("noc", database.collection("collect").document(id).collection("comment").get()
-                                                        .result.size().toString().toInt())
+//                                        var commentSize = database.collection("collect")
+//                                                .document(id).collection("comment").get().addOnCompleteListener{
+//                                                                task -> if(task.isSuccessful){ task.result.size().toString().toInt()
+//                                                                }
+//                                                }
+//                                        database.collection("collect").document(id)
+//                                                .update("noc", commentSize)
                                         adapter.notifyDataSetChanged()
                                 }
                 }
@@ -205,6 +211,42 @@ class ContentsViewActivity: ComponentActivity() {
 
                 }
 
+                binding.deleteContent.setOnClickListener {
+                        var content_uid: String = ""
+                        database.collection("collect").document(id)
+                                .get().addOnCompleteListener {task ->
+                                        if(task.isSuccessful){
+                                                val doc = task.result
+                                                content_uid = doc.get("uid").toString()
+                                        }
+                                }
+                        val builder = AlertDialog.Builder(this)
+                                .setTitle("Delete")
+                                .setMessage("삭제하시려면 '확인'버튼을 눌러주세요.")
+                                .setPositiveButton("확인",
+                                        DialogInterface.OnClickListener{ dialog, which ->
+                                                if(content_uid == uid) {
+                                                        database.collection("collect").document(id).delete()
+                                                                .addOnSuccessListener {
+                                                                        Toast.makeText(this, "삭제성공",
+                                                                                Toast.LENGTH_SHORT).show()
+                                                                        finish()
+                                                                }
+                                                                .addOnFailureListener { e ->
+                                                                        Toast.makeText(this, "삭제실패. ErrorCode: ${e}",
+                                                                                Toast.LENGTH_SHORT).show()
+                                                                }
+                                                }
+                                                else {
+                                                        Toast.makeText(this, "다른 사용자의 글은 삭제할 수 없습니다.",
+                                                                Toast.LENGTH_SHORT).show()
+                                                }
+                                        })
+                                .setNegativeButton("취소",
+                                        DialogInterface.OnClickListener { dialog, which -> })
+                        builder.show()
+                }
+
         } //onCreate
 
         fun writeComment(
@@ -232,7 +274,7 @@ class ContentsViewActivity: ComponentActivity() {
                                 Toast.makeText(
                                         this,
                                         "작성실패. ErrorCode: addOnFailureListener",
-                                        Toast.LENGTH_LONG
+                                        Toast.LENGTH_SHORT
                                 ).show()
                         }
         }
