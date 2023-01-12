@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="#181818"
     android:layout_width="match_parent"
@@ -186,6 +186,15 @@
                     android:textColor="#B7B7B7"
                     android:textSize="17dp"/>
             </LinearLayout> <!-- 댓글달기 리니어레이아웃 -->
+            <TextView
+                android:id="@+id/content_noc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="댓글 (0)"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#D3D3D3"
+                android:textSize="16dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -226,4 +235,4 @@
 
         </LinearLayout>
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

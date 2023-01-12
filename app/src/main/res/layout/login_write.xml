@@ -82,26 +82,6 @@
                 android:layout_height="40dp"
                 android:background="@drawable/text_decrease_24"/>
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/image_linear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="gone">
-            <TextView
-                android:id="@+id/image_url_edittext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이미지를 사용하려면 오른쪽의 버튼을 눌러주세요."
-                android:textColor="#B7B7B7"
-                android:singleLine="true"
-                android:layout_weight="1"/>
-            <Button
-                android:id="@+id/image_upload_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="등록"/>
-        </LinearLayout>
         <ImageView
             android:id="@+id/preview_image"
             android:layout_gravity="center_horizontal"

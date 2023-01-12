@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+
 class CommentAdapter (val itemList: ArrayList<ViewData>) :
     RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
 

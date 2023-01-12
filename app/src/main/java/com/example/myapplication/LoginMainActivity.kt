@@ -44,7 +44,8 @@ class LoginMainActivity : ComponentActivity () {
                         dc.data.getValue("title").toString(),
                         dc.data.getValue("time").toString(),
                         "댓글(${dc.data.getValue("noc").toString()})",
-                        "추천(${dc.data.getValue("recom").toString()})")
+                        "추천(${dc.data.getValue("recom").toString()})",
+                        "조회수(${dc.data.getValue("nov").toString()})")
                 )
             }
             adapter.notifyDataSetChanged()
@@ -59,7 +60,8 @@ class LoginMainActivity : ComponentActivity () {
                             dc.data.getValue("title").toString(),
                         dc.data.getValue("time").toString(),
                             "댓글(${dc.data.getValue("noc").toString()})",
-                        "추천(${dc.data.getValue("recom").toString()})")
+                        "추천(${dc.data.getValue("recom").toString()})",
+                            "조회수(${dc.data.getValue("nov").toString()})")
                     )
                 }
                 adapter.notifyDataSetChanged()

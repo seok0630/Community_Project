@@ -26,7 +26,7 @@ class ViewAdpater (val view: View, val itemList: ArrayList<ViewData>) :
         val time: TextView = view.findViewById(R.id.lv_time)
         val noc: TextView = view.findViewById(R.id.lv_noc)
         val recom: TextView = view.findViewById(R.id.lv_recom)
-        val rootview: View = view.findViewById(R.id.lv_rootview)
+        val nov: TextView = view.findViewById(R.id.lv_nov)
     }
 
     override fun onCreateViewHolder (parent: ViewGroup, viewType: Int): ViewHolder{
@@ -41,6 +41,7 @@ class ViewAdpater (val view: View, val itemList: ArrayList<ViewData>) :
         holder.time.text = itemList[position].time
         holder.noc.text = itemList[position].noc
         holder.recom.text = itemList[position].recom
+        holder.nov.text = itemList[position].nov
         holder.itemView.setOnClickListener {
             itemClickListner.onClick(it, position)
         }
