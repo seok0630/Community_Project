@@ -252,6 +252,7 @@ class ContentsViewActivity: ComponentActivity() {
                         builder.show()
                 }
 
+
         } //onCreate
 
         fun writeComment(

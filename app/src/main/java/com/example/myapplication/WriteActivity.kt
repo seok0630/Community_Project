@@ -7,18 +7,18 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
-import androidx.core.view.get
-import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.example.myapplication.databinding.LoginWriteBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.UploadTask.TaskSnapshot
+import java.io.File
+import java.io.IOException
+import java.nio.file.Files
+import java.nio.file.Path
 import java.time.LocalDateTime
 
 class WriteActivity : ComponentActivity() {

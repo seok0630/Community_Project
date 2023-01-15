@@ -51,6 +51,12 @@ class LoginMainActivity : ComponentActivity () {
             adapter.notifyDataSetChanged()
         }
 
+        binding.loginMainSetting.setOnClickListener {
+            var intent = Intent(this, ContentsViewActivity::class.java)
+            intent.putExtra("uid", uid)
+            startActivity(intent)
+        }
+
         binding.refreshLayout.setOnRefreshListener {
             docRef.get().addOnSuccessListener { QuerySnapshot ->
                 list.clear()

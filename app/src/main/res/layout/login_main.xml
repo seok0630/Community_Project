@@ -5,6 +5,19 @@
     android:layout_height="match_parent"
     android:background="#181818">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:contentDescription="하고 싶은 설명"
+        android:id="@+id/login_main_write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#203864"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_baseline_create_24"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
     <Button
         android:id="@+id/login_main_back"
         android:layout_width="40dp"
@@ -15,13 +28,13 @@
         android:layout_marginTop="12dp"/>
 
     <Button
-        android:id="@+id/login_main_write"
+        android:id="@+id/login_main_setting"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/write_white" />
+        android:background="@drawable/ic_baseline_settings_24" />
 
     <LinearLayout
         android:layout_width="match_parent"
