@@ -45,6 +45,7 @@
 사용자의 UID가 데이터베이스에 저장된 해당 글의 UID와 맞지않아 삭제가 되지 않는다.  
 
 ### 댓글
+<img width="25%" src="https://user-images.githubusercontent.com/70646278/221899494-145b6410-d5a4-448f-82b8-40c882b4344b.gif"/>  
 
 # 프로젝트 평가 및 개선 방향
 
